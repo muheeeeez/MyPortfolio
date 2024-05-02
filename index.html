@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Abdul-Muiz Olaleye Portfolio</title>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div class="menu">
+          <img src="images/logo.png" alt="logo" class="logo" />
+          <div class="menu-btn" onclick="toggleMenu()">&#9776;</div>
+        </div>
+
+        <div class="navbar">
+          <div><a href="#">Home</a></div>
+          <div><a href="#project">Project</a></div>
+          <div><a href="#experience">Experience</a></div>
+          <div><a href="#contact">Contact</a></div>
+        </div>
+      </nav>
+    </header>
+    <section class="container about">
+      <div class="avatar">
+        <img src="images/profile-picture.jpg" alt="avatar" />
+      </div>
+      <div class="about-text">
+        <h1>
+          Passionate Front-End Engineer Ready to Elevate
+          <span>User Experiences!</span>
+        </h1>
+        <p>
+          As an economics graduate with a passion for front-end technologies, I
+          bring a distinctive combination of analytical thinking and technical
+          expertise to my work. I thrive on crafting innovative solutions to
+          intricate problems, leveraging my continuous learning mindset to stay
+          at the forefront of technology.
+        </p>
+        <div class="about-btn">
+          <button class="btn-primary">
+            <a href="#contact">Get In Touch</a>
+          </button>
+          <button class="btn-secondary" onclick="downloadPDF()">
+            Download Resume
+          </button>
+        </div>
+      </div>
+    </section>
+    <section class="container experience-with">
+      <h2>EXPERIENCE WITH</h2>
+      <div class="experience-with-lang">
+        <div><img src="images/html.png" alt="html logo" /></div>
+        <div><img src="images/css.png" alt="css logo" /></div>
+        <div><img src="images/javascript.png" alt="javascript logo" /></div>
+        <div><img src="images/vuejs.png" alt="vue logo" /></div>
+      </div>
+    </section>
+    <section class="container" id="project">
+      <h2 class="primary-heading heading-projects">PROJECTS</h2>
+      <div class="projects">
+        <div class="project-item">
+          <img src="images/tullips.jpg" alt="Tullips" />
+          <div class="project-title">
+            <p>
+              <a href="https://tullipsweb.netlify.app/" target="_blank"
+                >CLICK HERE TO VISIT</a
+              >
+            </p>
+            <h3>Tullips Project</h3>
+          </div>
+        </div>
+        <div class="project-item">
+          <img src="images/helpmeout.jpg" alt="Helpmeout" />
+          <div class="project-title">
+            <p>
+              <a href="https://helpmeoutpage.netlify.app/" target="_blank"
+                >CLICK HERE TO VISIT</a
+              >
+            </p>
+            <h3>HelpMeOut Project</h3>
+          </div>
+        </div>
+        <div class="project-item">
+          <img src="images/blcokchain.png" alt="Tullips" />
+          <div class="project-title">
+            <p>
+              <a href="https://artnftblockchain.netlify.app/" target="_blank"
+                >CLICK HERE TO VISIT</a
+              >
+            </p>
+            <h3>Art.Nft Project</h3>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="container" id="experience">
+      <h2 class="primary-heading heading-experience">EXPERIENCE</h2>
+      <div class="experiences">
+        <div class="experience-item">
+          <div class="experience-title-container">
+            <!-- <div><img src="" alt="company-logo" /></div> -->
+            <div class="experience-title">
+              Intern , Web Design , New Horizons
+            </div>
+            <div class="date">May 2022 - August 2022</div>
+          </div>
+          <p>
+            As an intern at New Horizons specializing in web design, I played a
+            crucial role in developing creative solutions for various web
+            projects. Collaborating with a dynamic team of fellow interns and
+            experienced professionals, I contributed to improving website
+            aesthetics and functionality, optimizing user experiences for
+            diverse clients.
+          </p>
+        </div>
+        <!-- <div class="experience-item">
+          <div class="experience-title-container">
+            <div><img src="" alt="company-logo" /></div>
+            <div class="experience-title">Lead Software Engineer at Google</div>
+            <div class="date">Nov 2019 - Present</div>
+          </div>
+          <p>
+            As a Senior Software Engineer at Google, I played a pivotal role in
+            developing innovative solutions for Google's core search algorithms.
+            Collaborating with a dynamic team of engineers, I contributed to the
+            enhancement of search accuracy and efficiency, optimizing user
+            experiences for millions of users worldwide.
+          </p>
+        </div> -->
+      </div>
+    </section>
+    <footer id="contact">
+      <div class="container">
+        <h2>Contact</h2>
+        <p>
+          As a dedicated front-end engineer, I specialize in crafting
+          sophisticated user interfaces with meticulous HTML, CSS, and
+          JavaScript implementation. My passion for creating visually appealing,
+          intuitive user experiences shines in the elegant and efficient
+          front-end solutions I deliver. Prioritizing industry best practices, I
+          stay updated on web development trends to ensure designs exceed modern
+          standards. Rigorous testing is integral, guaranteeing reliability. I
+          consistently contribute to successful projects through innovative
+          problem-solving in front-end development.
+        </p>
+        <div class="email-container">
+          <div><img src="images/Email Icon.png" alt="email-icon" /></div>
+          <a href="mailto:abdulmuiz.olatunbosun@gmail.com"
+            >abdulmuiz.olatunbosun@gmail.com</a
+          >
+        </div>
+        <div class="social-links">
+          <div
+            onclick="window.open('https://www.instagram.com/_muiz.olatunbosun/', '_blank');"
+          >
+            <img src="images/instagram.png" alt="instagram" />
+          </div>
+          <div
+            onclick="window.open('https://twitter.com/MuizOlaleye', '_blank');"
+          >
+            <img src="images/x.png" alt="x" />
+          </div>
+          <div onclick="window.open('https://github.com/muheeeeez', '_blank');">
+            <img src="images/github.png" alt="github" />
+          </div>
+          <div
+            onclick="window.open('https://www.linkedin.com/in/abdul-muiz-olaleye/', '_blank');"
+          >
+            <img src="images/linkedin.png" alt="linkedin" />
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script>
+      function downloadPDF() {
+        var pdfUrl = "images/Abdul-muiz Olaleye resume.pdf";
+        var link = document.createElement("a");
+        link.href = pdfUrl;
+        link.download = "Abdul-muiz Olaleye resume.pdf";
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+      }
+      function toggleMenu() {
+        var menu = document.querySelector(".navbar");
+        menu.classList.toggle("show");
+      }
+    </script>
+  </body>
+</html>
