@@ -14,7 +14,7 @@ export default defineConfig(async () => {
         "@": "/src",
       },
     },
-    assetsInclude: ["**/*.glb"],
+    assetsInclude: ["**/*.glb", "**/*.fbx"],
     publicDir: "public",
     base: "./", // This ensures relative asset paths work correctly
   };

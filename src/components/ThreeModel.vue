@@ -14,6 +14,7 @@
 import { ref, onMounted, onBeforeUnmount } from "vue";
 import * as THREE from "three";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
+import { FBXLoader } from "three/examples/jsm/loaders/FBXLoader.js";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
 import { gsap } from "gsap";
 import modelPath from "../img/muiz.glb";
@@ -34,18 +35,18 @@ export default {
 
       // Camera with standard settings
       camera = new THREE.PerspectiveCamera(
-        60, // Wide field of view
+        60,
         threeContainer.value.clientWidth / threeContainer.value.clientHeight,
         0.1,
         1000
       );
-      camera.position.set(0, 0, 3); // Default position
+      camera.position.set(0, 0, 3);
       camera.lookAt(0, 0, 0);
 
       // Basic renderer setup
       renderer = new THREE.WebGLRenderer({
         antialias: true,
-        alpha: false, // Full background
+        alpha: false,
       });
       renderer.setSize(
         threeContainer.value.clientWidth,
@@ -59,11 +60,11 @@ export default {
       // Simple controls
       controls = new OrbitControls(camera, renderer.domElement);
       controls.enableDamping = true;
-      controls.enableZoom = true; // Enable zoom for debugging
-      controls.enablePan = true; // Enable pan for debugging
+      controls.enableZoom = true;
+      controls.enablePan = true;
       controls.target.set(0, 0, 0);
 
-      // Basic lighting - bright and clear
+      // Lighting
       const ambientLight = new THREE.AmbientLight(0xffffff, 1);
       scene.add(ambientLight);
 
@@ -73,30 +74,30 @@ export default {
 
       clock = new THREE.Clock();
 
-      // Load 3D model with comprehensive error handling
-      const loader = new GLTFLoader();
-      console.log("Loading model from:", modelPath);
+      // Load main model and idle animation
+      loadModelAndAnimation();
+    };
 
-      loader.load(
+    const loadModelAndAnimation = () => {
+      const gltfLoader = new GLTFLoader();
+      const fbxLoader = new FBXLoader();
+
+      // Load main character model
+      gltfLoader.load(
         modelPath,
         function (gltf) {
           model = gltf.scene;
-          console.log("Model loaded successfully:", model);
-
+          
           // Reset transformations
           model.position.set(0, 0, 0);
           model.rotation.set(0, 0, 0);
           model.scale.set(1, 1, 1);
 
-          // Print hierarchy for debugging
-          console.log("Model hierarchy:");
+          // Setup model
           model.traverse(function (child) {
-            console.log(child.name, child.type);
             if (child.isMesh) {
               child.castShadow = true;
               child.receiveShadow = true;
-
-              // Make sure materials are visible
               if (child.material) {
                 child.material.side = THREE.DoubleSide;
                 child.material.transparent = false;
@@ -108,15 +109,54 @@ export default {
 
           scene.add(model);
 
-          // Calculate bounding box to center model
+          // Create animation mixer
+          mixer = new THREE.AnimationMixer(model);
+          animationMixers.push(mixer);
+
+          // Load idle animation using absolute path
+          fbxLoader.load(
+            '/Idle.fbx',
+            function (fbx) {
+              console.log('FBX loaded successfully:', fbx);
+              const idleAnimation = fbx.animations[0];
+              console.log('Animation found:', idleAnimation);
+              
+              if (idleAnimation) {
+                console.log('Animation duration:', idleAnimation.duration);
+                
+                // Create animation mixer if it doesn't exist
+                if (!mixer) {
+                  mixer = new THREE.AnimationMixer(model);
+                  animationMixers.push(mixer);
+                }
+                
+                // Create and play animation
+                const action = mixer.clipAction(idleAnimation);
+                console.log('Animation action created:', action);
+                action.setLoop(THREE.LoopRepeat);
+                action.clampWhenFinished = false;
+                action.play();
+                console.log('Animation started playing');
+              } else {
+                console.warn('No animation found in the FBX file');
+              }
+              
+              loading.value = false;
+            },
+            // Progress callback
+            function (progress) {
+              console.log('Loading progress:', (progress.loaded / progress.total * 100) + '%');
+            },
+            function (error) {
+              console.error("Error loading idle animation:", error);
+            }
+          );
+
+          // Center and adjust camera
           const box = new THREE.Box3().setFromObject(model);
           const center = box.getCenter(new THREE.Vector3());
           const size = box.getSize(new THREE.Vector3());
 
-          console.log("Model dimensions:", size);
-          console.log("Model center:", center);
-
-          // Move camera to fit the model
           const maxDim = Math.max(size.x, size.y, size.z);
           const fov = camera.fov * (Math.PI / 180);
           let cameraZ = Math.abs(maxDim / 2 / Math.tan(fov / 2)) * 1.5;
@@ -128,25 +168,17 @@ export default {
           camera.far = cameraToFarEdge * 3;
           camera.updateProjectionMatrix();
 
-          // Center the model
           model.position.x = -center.x;
           model.position.y = -center.y;
           model.position.z = -center.z;
-
-          loading.value = false;
         },
-        function (xhr) {
-          console.log((xhr.loaded / xhr.total) * 100 + "% loaded");
-        },
+        undefined,
         function (err) {
           console.error("Error loading model:", err);
           error.value = err.message || "Failed to load";
           loading.value = false;
         }
       );
-
-      // Handle window resize
-      window.addEventListener("resize", onWindowResize);
     };
 
     const animate = () => {
@@ -154,10 +186,14 @@ export default {
 
       if (controls) controls.update();
 
-      // Update any animation mixers
+      // Update animations
       const delta = clock.getDelta();
       if (animationMixers.length > 0) {
-        animationMixers.forEach((mixer) => mixer.update(delta));
+        animationMixers.forEach(mixer => {
+          if (mixer) {
+            mixer.update(delta);
+          }
+        });
       }
 
       // Render scene
@@ -181,6 +217,7 @@ export default {
     onMounted(() => {
       initThree();
       animate();
+      window.addEventListener("resize", onWindowResize);
     });
 
     onBeforeUnmount(() => {
