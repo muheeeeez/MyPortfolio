@@ -219,6 +219,7 @@ import dotNotation from "../img/DotNotation.png";
 import tullips from "../img/tullips.png";
 import artNFT from "../img/blockchain.png";
 import blogPlatform from "../img/blogplatform.png";
+import clauseguard from "../img/clauseguard.png";
 export default {
   name: "ProjectsPage",
   data() {
@@ -226,6 +227,16 @@ export default {
       currentFilter: "all",
       categories: ["Chrome Extension", "Web Development", "Web Design", "Mobile Development", "School Projects"],
       projects: [
+        {
+          title: "ClauseGuard - AI-Powered Contract Analysis Platform",
+          description:
+            "An intelligent contract analysis tool leveraging OpenAI GPT-4, Vue.js, and FastAPI to automatically detect legal risks, missing signatures, and critical deadlines in uploaded documents.",
+          image: clauseguard,
+          technologies: ["Vue.js", "JavaScript", "OpenAI GPT-4", "FastAPI", "Supabase"],
+          category: "Web Development",
+          demoLink: "https://clauseguardai.org/",
+          codeLink: "#",
+        },
         {
           title: "HelpMeOut",
           description:
