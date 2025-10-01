@@ -30,9 +30,10 @@
               Full Stack Developer
             </h2>
             <p class="text-lg mb-10 max-w-lg text-gray-300 leading-relaxed">
-              I'm a Computer Programming graduate from Algonquin College,
-              specializing in building exceptional digital experiences with
-              modern web technologies.
+              I'm a passionate full-stack developer specializing in building
+              exceptional digital experiences with modern web technologies. I
+              create end-to-end solutions from frontend interfaces to backend
+              APIs.
             </p>
             <div class="flex flex-wrap gap-6">
               <router-link
@@ -210,6 +211,9 @@ import vueLogo from "../img/logo/Vue-logo.png";
 import jsLogo from "../img/logo/js-logo.png";
 import typescriptLogo from "../img/logo/TypeScript.png";
 import nodejsLogo from "../img/logo/nodejs.png";
+import pythonLogo from "../img/logo/python-logo.png";
+import fastapiLogo from "../img/logo/fastapi-logo.png";
+import reactNativeLogo from "../img/logo/react-native-logo.png";
 import htmlLogo from "../img/logo/html-logo.png";
 import cssLogo from "../img/logo/css-logo.png";
 import clauseguard from "../img/clauseguard.png";
@@ -228,12 +232,13 @@ export default {
   data() {
     return {
       techStack: [
-        { name: "Vue.js", icon: vueLogo },
         { name: "JavaScript", icon: jsLogo },
-        { name: "TypeScript", icon: typescriptLogo },
+        { name: "Vue.js", icon: vueLogo },
+        { name: "React Native", icon: reactNativeLogo },
+        { name: "Python", icon: pythonLogo },
+        { name: "FastAPI", icon: fastapiLogo },
+
         { name: "Node.js", icon: nodejsLogo },
-        { name: "HTML5", icon: htmlLogo },
-        { name: "CSS3", icon: cssLogo },
       ],
       featuredProjects: [
         {
@@ -252,7 +257,25 @@ export default {
           codeLink: "#",
         },
         {
-          title: "HelpMeOut",
+          title: "QuizMakerAI - AI-Powered Educational Assessment Platform",
+          description:
+            "A comprehensive AI-powered educational platform that revolutionizes quiz creation and learning. Features intelligent content analysis for automatic question generation, dual professor/student portals, advanced analytics, and real-time performance insights. Built with modern web technologies to streamline educational workflows.",
+          image: quizMaker,
+          technologies: [
+            "Nuxt.js 3",
+            "Vue.js 3",
+            "Pinia",
+            "JWT Authentication",
+            "Chart.js",
+            "Font Awesome",
+            "Vite",
+            "AI Integration",
+          ],
+          demoLink: "https://quizmai.com/",
+          codeLink: "https://github.com/QuizMakerAI/QuizMakerFrontend",
+        },
+        {
+          title: "HelpMeOut - Screen Recording & Video Sharing Web Application",
           description:
             "HelpMeOut is a web application that allows users to create and share instructional screen recordings to help friends and family navigate websites",
           image: helpMeOut,
@@ -265,15 +288,6 @@ export default {
           ],
           demoLink: "https://help-meout.netlify.app/",
           codeLink: "https://github.com/muheeeeez/HelpMeOut-v2",
-        },
-        {
-          title: "QuizMakerAI",
-          description:
-            "A comprehensive quiz creation and management platform that enables users to build, share, and take quizzes.",
-          image: quizMaker,
-          technologies: ["Vue.js", "Firebase", "Axios"],
-          demoLink: "https://quizmai.com/",
-          codeLink: "https://github.com/QuizMakerAI/QuizMakerFrontend",
         },
       ],
     };

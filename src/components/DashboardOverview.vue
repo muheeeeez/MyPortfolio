@@ -10,7 +10,7 @@
           <div class="name" data-text="Abdul-muiz Olaleye">
             Abdul-muiz Olaleye
           </div>
-          I am a Full Stack Engineer
+          I am a Full Stack Developer
         </h1>
       </div>
       <div class="myImage"><img :src="profileImage" alt="" /></div>
@@ -23,7 +23,7 @@
           <div class="name" data-text="Abdul-muiz Olaleye">
             Abdul-muiz Olaleye
           </div>
-          I build things for web
+          I build full-stack applications
         </h1>
       </div>
     </div>
@@ -158,9 +158,9 @@
           <img :src="cssLogo" alt="CSS3" class="tech-icon" />
           <img :src="jsLogo" alt="JavaScript" class="tech-icon" />
           <img :src="vueLogo" alt="Vue.js" class="tech-icon" />
+          <img :src="reactNativeLogo" alt="React Native" class="tech-icon" />
           <img :src="nuxtLogo" alt="Nuxt.js" class="tech-icon" />
           <img :src="ionicLogo" alt="Ionic" class="tech-icon" />
-
           <img :src="typescriptLogo" alt="TypeScript" class="tech-icon" />
           <img :src="flutterLogo" alt="Flutter" class="tech-icon" />
         </div>
@@ -170,6 +170,8 @@
         <div class="tech-icons">
           <img :src="javaLogo" alt="Java" class="tech-icon" />
           <img :src="nodejsLogo" alt="Node.js" class="tech-icon" />
+          <img :src="pythonLogo" alt="Python" class="tech-icon" />
+          <img :src="fastapiLogo" alt="FastAPI" class="tech-icon" />
           <img :src="firebaseLogo" alt="Firebase" class="tech-icon" />
           <img :src="phpLogo" alt="PHP" class="tech-icon" />
         </div>
@@ -369,6 +371,9 @@ import eclipseLogo from "../img/logo/eclipse-logo.png";
 import androidStudioLogo from "../img/logo/andriod-studio.png";
 import bootstrapLogo from "../img/logo/bootstrap-logo.png";
 import tailwindLogo from "../img/logo/tailwind-logo.png";
+import pythonLogo from "../img/logo/python-logo.png";
+import fastapiLogo from "../img/logo/fastapi-logo.png";
+import reactNativeLogo from "../img/logo/react-native-logo.png";
 
 // Import social media icons and logo
 import logoImage from "../img/logo.png";
@@ -416,6 +421,9 @@ export default {
       androidStudioLogo,
       bootstrapLogo,
       tailwindLogo,
+      pythonLogo,
+      fastapiLogo,
+      reactNativeLogo,
 
       // Social media icons and logo
       logoImage,

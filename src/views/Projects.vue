@@ -225,20 +225,51 @@ export default {
   data() {
     return {
       currentFilter: "all",
-      categories: ["Chrome Extension", "Web Development", "Web Design", "Mobile Development", "School Projects"],
+      categories: [
+        "Chrome Extension",
+        "Web Development",
+        "Web Design",
+        "Mobile Development",
+        "School Projects",
+      ],
       projects: [
         {
           title: "ClauseGuard - AI-Powered Contract Analysis Platform",
           description:
             "An intelligent contract analysis tool leveraging OpenAI GPT-4, Vue.js, and FastAPI to automatically detect legal risks, missing signatures, and critical deadlines in uploaded documents.",
           image: clauseguard,
-          technologies: ["Vue.js", "JavaScript", "OpenAI GPT-4", "FastAPI", "Supabase"],
+          technologies: [
+            "Vue.js",
+            "JavaScript",
+            "OpenAI GPT-4",
+            "FastAPI",
+            "Supabase",
+          ],
           category: "Web Development",
           demoLink: "https://clauseguardai.org/",
           codeLink: "#",
         },
         {
-          title: "HelpMeOut",
+          title: "QuizMakerAI - AI-Powered Educational Assessment Platform",
+          description:
+            "A comprehensive AI-powered educational platform that revolutionizes quiz creation and learning. Features intelligent content analysis for automatic question generation, dual professor/student portals, advanced analytics, and real-time performance insights. Built with modern web technologies to streamline educational workflows.",
+          image: quizMaker,
+          technologies: [
+            "Nuxt.js 3",
+            "Vue.js 3",
+            "Pinia",
+            "JWT Authentication",
+            "Chart.js",
+            "Font Awesome",
+            "Vite",
+            "AI Integration",
+          ],
+          category: "Web Development",
+          demoLink: "https://genertia-quizmakerfrontend.onrender.com/",
+          codeLink: "https://github.com/QuizMakerAI/QuizMakerFrontend",
+        },
+        {
+          title: "HelpMeOut- Screen Recording & Video Sharing Web Application",
           description:
             "HelpMeOut is a web application that allows users to create and share instructional screen recordings to help friends and family navigate websites",
           image: helpMeOut,
@@ -248,26 +279,7 @@ export default {
           codeLink: "https://github.com/muheeeeez/HelpMeOut-v2",
         },
         {
-          title: "HelpMeOut Mobile App ",
-          description: "A mobile app for the HelpMeOut web application",
-          image: helpMeOut,
-          technologies: ["Flutter", "Dart", "Firebase", "Rest API"],
-          category: "Mobile Development",
-          demoLink: "https://tinyurl.com/2absdxcl",
-          codeLink: "https://github.com/muheeeeez/HelpMeOutFlutter.git",
-        },
-        {
-          title: "QuizMakerAI",
-          description:
-            "A comprehensive quiz creation and management platform that enables users to build, share, and take quizzes.",
-          image: quizMaker,
-          technologies: ["Vue.js", "Firebase", "Axios"],
-          category: "Web Development",
-          demoLink: "https://quizmai.com/",
-          codeLink: "https://github.com/QuizMakerAI/QuizMakerFrontend",
-        },
-        {
-          title: "SmartBrain",
+          title: "SmartBrain - AI Face Detection Web App",
           description:
             "SmartBrain is a web application that detects faces in images using AI algorithms",
           image: smartBrains,
@@ -275,6 +287,23 @@ export default {
           category: "Web Development",
           demoLink: "https://smart-brain-dev.netlify.app/",
           codeLink: "https://github.com/muheeeeez/Smartbrain-Frontend",
+        },
+        {
+          title: "Blog Platform",
+          description:
+            "A blog platform that allows users to create and share blog posts",
+          image: blogPlatform,
+          technologies: [
+            "HTML5",
+            "CSS3",
+            "PHP",
+            "MySQL",
+            "JavaScript",
+            "Font Awesome",
+          ],
+          category: "School Projects",
+          demoLink: "https://blogplatform.kesug.com/",
+          codeLink: "https://github.com/BlogSystemProject/BlogSystem",
         },
         {
           title: "DE Gentlesoul Global",
@@ -331,14 +360,15 @@ export default {
           demoLink: "https://artnftblockchain.netlify.app/",
           codeLink: "https://github.com/muheeeeez/Blockchain",
         },
+
         {
-          title: "Blog Platform",
-          description: "A blog platform that allows users to create and share blog posts",
-          image: blogPlatform,
-          technologies: ["HTML5", "CSS3", "PHP", "MySQL", "JavaScript", "Font Awesome"],
-          category: "School Projects",
-          demoLink: "https://blogplatform.kesug.com/",
-          codeLink: "https://github.com/BlogSystemProject/BlogSystem",
+          title: "HelpMeOut Mobile App ",
+          description: "A mobile app for the HelpMeOut web application",
+          image: helpMeOut,
+          technologies: ["Flutter", "Dart", "Firebase", "Rest API"],
+          category: "Mobile Development",
+          demoLink: "https://tinyurl.com/2absdxcl",
+          codeLink: "https://github.com/muheeeeez/HelpMeOutFlutter.git",
         },
         // {
         //   title: "Cloud Projects Coming Soon",

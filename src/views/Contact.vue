@@ -23,8 +23,9 @@
           <div class="contact-info" data-aos="fade-right">
             <h2 class="mb-6">Contact Information</h2>
             <p class="mb-8">
-              I'm based in Ottawa, Canada and available for remote work or local
-              opportunities. Here's how you can reach me:
+              I'm available to work anywhere - whether it's remote, local
+              opportunities in Ottawa, Canada, or relocating for the right
+              position. Here's how you can reach me:
             </p>
 
             <div class="space-y-6">

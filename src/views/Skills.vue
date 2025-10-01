@@ -6,9 +6,10 @@
         <div class="text-center mb-12" data-aos="fade-up">
           <h1 class="gradient-text mb-4">Technical Skills</h1>
           <p class="text-lg max-w-3xl mx-auto">
-            My technical skills and expertise that I've developed through
-            education, personal projects, and continuous learning as a Computer
-            Programming graduate from Algonquin College.
+            My technical skills and expertise as a full-stack developer, built
+            through hands-on experience, personal projects, and continuous
+            learning. I specialize in creating end-to-end web applications with
+            modern technologies.
           </p>
           <div class="section-divider mx-auto mt-6"></div>
         </div>
@@ -278,6 +279,9 @@ import githubLogo from "../img/logo/github-logo.png";
 import vscodeLogo from "../img/logo/vscode-logo.png";
 import eclipseLogo from "../img/logo/eclipse-logo.png";
 import awsLogo from "../img/logo/aws-color.png";
+import pythonLogo from "../img/logo/python-logo.png";
+import fastapiLogo from "../img/logo/fastapi-logo.png";
+import reactNativeLogo from "../img/logo/react-native-logo.png";
 
 export default {
   name: "SkillsPage",
@@ -287,43 +291,50 @@ export default {
         { name: "HTML5", icon: htmlLogo, level: 95 },
         { name: "CSS3", icon: cssLogo, level: 90 },
         { name: "JavaScript", icon: jsLogo, level: 85 },
-        { name: "TypeScript", icon: typescriptLogo, level: 75 },
-        { name: "Vue.js", icon: vueLogo, level: 80 },
-        { name: "Nuxt.js", icon: nuxtLogo, level: 70 },
         { name: "Tailwind CSS", icon: tailwindLogo, level: 85 },
-        { name: "Flutter", icon: flutterLogo, level: 60 },
+        { name: "Vue.js", icon: vueLogo, level: 80 },
+        { name: "React Native", icon: reactNativeLogo, level: 75 },
+        { name: "TypeScript", icon: typescriptLogo, level: 75 },
+        { name: "Nuxt.js", icon: nuxtLogo, level: 70 },
         { name: "Ionic", icon: ionicLogo, level: 65 },
+        { name: "Flutter", icon: flutterLogo, level: 60 },
       ],
       backendSkills: [
+        { name: "Python", icon: pythonLogo, level: 85 },
         { name: "Node.js", icon: nodejsLogo, level: 80 },
-        { name: "Java", icon: javaLogo, level: 75 },
-        { name: "PHP", icon: phpLogo, level: 70 },
-     
+        { name: "FastAPI", icon: fastapiLogo, level: 80 },
         { name: "RESTful APIs", icon: nodejsLogo, level: 80 },
+        { name: "Java", icon: javaLogo, level: 75 },
         { name: "Firebase", icon: firebaseLogo, level: 75 },
         { name: "AWS Cloud Services", icon: awsLogo, level: 75 },
+        { name: "PHP", icon: phpLogo, level: 70 },
       ],
       databaseSkills: [
         { name: "MySQL", icon: mysqlLogo, level: 85 },
-        { name: "PostgreSQL", icon: postgresLogo, level: 75 },
         { name: "MongoDB", icon: mongodbLogo, level: 80 },
+        { name: "PostgreSQL", icon: postgresLogo, level: 75 },
         { name: "SQL Server", icon: ssmsLogo, level: 70 },
       ],
       devopsSkills: [
-        { name: "AWS Cloud Services", icon: awsLogo, level: 75 },
+        { name: "VS Code", icon: vscodeLogo, level: 95 },
         { name: "Git", icon: gitLogo, level: 90 },
         { name: "GitHub", icon: githubLogo, level: 85 },
-        { name: "VS Code", icon: vscodeLogo, level: 95 },
+        { name: "AWS Cloud Services", icon: awsLogo, level: 75 },
         { name: "Eclipse", icon: eclipseLogo, level: 70 },
       ],
       softSkills: [
         { name: "Problem Solving", level: 90 },
-        { name: "Team Collaboration", level: 85 },
-        { name: "Communication", level: 80 },
-        { name: "Time Management", level: 85 },
         { name: "Adaptability", level: 90 },
+        { name: "Team Collaboration", level: 85 },
+        { name: "Time Management", level: 85 },
+        { name: "Communication", level: 80 },
       ],
       currentlyLearning: [
+        {
+          name: "AI/ML Integration",
+          description:
+            "Learning how to integrate AI services into web applications.",
+        },
         {
           name: "Cloud Computing (AWS)",
           description:
@@ -334,33 +345,27 @@ export default {
           description:
             "Exploring 3D graphics programming for web applications.",
         },
-        {
-          name: "AI/ML Integration",
-          description:
-            "Learning how to integrate AI services into web applications.",
-        },
       ],
       certifications: [
         {
-          name: "AWS AI Practitioner",
-          issuer: "Amazon Web Services",
-          date: "2025",
-        },
-        {
-          name: "AWS Cloud Practitioner",
-          issuer: "Amazon Web Services",
-          date: "2024",
-        },
-
-        {
           name: "Computer Programming Diploma",
           issuer: "Algonquin College",
-          date: "2024 - Present",
+          date: "January 2024 - August 2025",
         },
         {
           name: "BSc Economics",
           issuer: "Babcock University",
-          date: "2020 - 2023",
+          date: "January 2020 - July 2023",
+        },
+        {
+          name: "AWS AI Practitioner",
+          issuer: "Amazon Web Services",
+          date: "March 2025",
+        },
+        {
+          name: "AWS Cloud Practitioner",
+          issuer: "Amazon Web Services",
+          date: "December 2024",
         },
       ],
     };

@@ -29,24 +29,24 @@
             <h2 class="mb-6">Who Am I?</h2>
             <p class="mb-4">
               I'm Abdul-muiz Olaleye, a passionate Full Stack Developer based in
-              Ottawa, Canada. I hold a BSc in Economics from Babcock University
-              and am currently pursuing a Computer Programming Diploma at
-              Algonquin College, while working as a Supervisor at Farm Boy.
+              Ottawa, Canada. With a BSc in Economics from Babcock University
+              and a Computer Programming Diploma from Algonquin College, I bring
+              a unique blend of analytical thinking and technical expertise to
+              every project I work on.
             </p>
             <p class="mb-4">
               My journey in programming began with a curiosity about how
-              websites and applications work behind the scenes. This curiosity
+              websites and mobile applications work behind the scenes. This curiosity
               evolved into a passion for creating functional, efficient, and
               user friendly digital solutions that solve real world problems.
             </p>
             <p class="mb-6">
-              I work with a diverse tech stack including Java, which I use
-              extensively in my academic projects, along with modern JavaScript
-              frameworks like Vue.js and various database systems. I
-              consistently explore new programming languages and technologies,
-              as I believe in continuous learning to stay current with industry
-              trends a commitment reflected in my AWS Cloud Practitioner and AWS
-              AI Practitioner certifications.
+              I work with a diverse tech stack including Python, FastAPI,
+              Node.js, and modern JavaScript frameworks like Vue.js, along with
+              various database systems. I consistently explore new programming
+              languages and technologies, as I believe in continuous learning to
+              stay current with industry trends, a commitment reflected in my
+              AWS Cloud Practitioner and AWS AI Practitioner certifications.
             </p>
 
             <div class="personal-info grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -288,7 +288,7 @@
             </div>
             <h3>Football</h3>
             <p>
-              Both playing and watching football matches - a passionate fan of
+              Both playing and watching football matches, a passionate fan of
               the beautiful game!
             </p>
           </div>
@@ -331,14 +331,14 @@ export default {
       profileImage,
       education: [
         {
-          period: "2024 - Present",
+          period: "January 2024 - August 2025",
           degree: "Computer Programming Diploma",
           institution: "Algonquin College, Ottawa",
           description:
             "Currently maintaining Dean's Honours List with a GPA of 3.94. Coursework includes Object Oriented Programming, Web Development, Database Management Systems, and Operating Systems.",
         },
         {
-          period: "2020 - 2023",
+          period: "January 2020 - July 2023",
           degree: "Bachelor of Science in Economics",
           institution: "Babcock University, Ogun State, Nigeria",
           description:
@@ -379,12 +379,12 @@ export default {
         {
           name: "AWS Cloud Practitioner",
           issuer: "Amazon Web Services",
-          year: "2024",
+          year: "December 2024",
         },
         {
           name: "AWS AI Practitioner",
           issuer: "Amazon Web Services",
-          year: "2025",
+          year: "March 2025",
         },
       ],
     };
