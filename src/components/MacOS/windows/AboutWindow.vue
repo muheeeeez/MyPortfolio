@@ -225,10 +225,11 @@ export default {
   },
   methods: {
     downloadResume() {
-      const pdfUrl = "/src/resume/Abdul-muiz-Olaleye.pdf";
+      const pdfUrl = "/Abdul-muiz-Olaleye.pdf";
       const link = document.createElement("a");
       link.href = pdfUrl;
       link.download = "Abdul-muiz-Olaleye-Resume.pdf";
+      link.target = "_blank";
       document.body.appendChild(link);
       link.click();
       document.body.removeChild(link);

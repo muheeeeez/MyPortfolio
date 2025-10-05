@@ -341,7 +341,7 @@ If you have an exciting project or opportunity, **let's connect!** I'm always ea
 
 ## 📄 Resume
 
-📥 **[Download My Resume (PDF)](./src/resume/Abdul-muiz-Olaleye.pdf)**
+📥 **[Download My Resume (PDF)](./public/Abdul-muiz-Olaleye.pdf)**
 
 ---
 
