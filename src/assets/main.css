@@ -1,3 +1,6 @@
+/* Import macOS-specific styles */
+@import "./macos.css";
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -5,9 +8,14 @@
 @layer base {
   html {
     scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
   }
   body {
-    @apply bg-dark text-light font-poppins;
+    @apply bg-macos-dark-bg text-macos-dark-text font-sf-pro overflow-hidden;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    touch-action: manipulation;
   }
   h1 {
     @apply text-4xl md:text-5xl font-bold;
@@ -16,25 +24,25 @@
     @apply text-3xl md:text-4xl font-bold;
   }
   h3 {
-    @apply text-2xl font-bold;
+    @apply text-2xl font-semibold;
   }
   p {
-    @apply text-gray-700;
+    @apply text-macos-dark-text-secondary;
   }
 }
 
 @layer components {
   .btn-primary {
-    @apply bg-primary text-white py-2 px-6 rounded-md hover:bg-opacity-90 transition-all duration-300;
+    @apply bg-primary text-white py-2 px-4 rounded-lg hover:bg-opacity-90 transition-all duration-200 font-medium text-sm;
   }
   .btn-secondary {
-    @apply bg-transparent border border-primary text-primary py-2 px-6 rounded-md hover:bg-primary hover:text-white transition-all duration-300;
+    @apply bg-macos-dark-sidebar border border-macos-dark-border text-macos-dark-text py-2 px-4 rounded-lg hover:bg-macos-dark-border transition-all duration-200 font-medium text-sm;
   }
   .section {
-    @apply py-16 md:py-24 px-4 max-w-7xl mx-auto;
+    @apply py-8 px-6;
   }
   .card {
-    @apply bg-card-bg rounded-lg p-6 shadow-lg hover:shadow-xl transition-all duration-300;
+    @apply bg-macos-dark-window rounded-lg p-6 border border-macos-dark-border;
   }
   .gradient-text {
     @apply text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary;
@@ -42,9 +50,9 @@
 }
 
 .section-divider {
-  height: 6px;
-  width: 100px;
-  background: linear-gradient(90deg, #a94064 0%, #4a5af9 100%);
-  margin: 1.5rem 0;
-  border-radius: 3px;
+  height: 4px;
+  width: 60px;
+  background: linear-gradient(90deg, #007aff 0%, #5856d6 100%);
+  margin: 1rem 0;
+  border-radius: 2px;
 }

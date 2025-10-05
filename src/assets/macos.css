@@ -1,0 +1,415 @@
+/* macOS-specific global styles */
+
+/* Glassmorphism utility */
+.glass {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(40px) saturate(180%);
+  -webkit-backdrop-filter: blur(40px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.glass-dark {
+  background: rgba(30, 30, 30, 0.85);
+  backdrop-filter: blur(40px) saturate(180%);
+  -webkit-backdrop-filter: blur(40px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* macOS window shadow */
+.window-shadow {
+  box-shadow: 0 0 0 0.5px rgba(0, 0, 0, 0.1), 0 10px 30px rgba(0, 0, 0, 0.3),
+    0 20px 60px rgba(0, 0, 0, 0.2);
+}
+
+/* macOS traffic lights */
+.traffic-lights {
+  display: flex;
+  gap: 8px;
+  padding: 12px;
+}
+
+.traffic-light {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 0.5px solid rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+  transition: all 0.15s ease;
+  position: relative;
+}
+
+.traffic-light:hover {
+  filter: brightness(1.1);
+  transform: scale(1.1);
+}
+
+.traffic-light:active {
+  transform: scale(0.95);
+}
+
+.traffic-light.close {
+  background: linear-gradient(135deg, #ff5f57 0%, #ff4444 100%);
+}
+
+.traffic-light.minimize {
+  background: linear-gradient(135deg, #ffbd2e 0%, #ffaa00 100%);
+}
+
+.traffic-light.maximize {
+  background: linear-gradient(135deg, #28ca42 0%, #24aa3b 100%);
+}
+
+/* Show symbols on hover */
+.traffic-lights:hover .traffic-light::before {
+  opacity: 1;
+}
+
+.traffic-light::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: opacity 0.15s ease;
+}
+
+.traffic-light.close::before {
+  content: "×";
+  font-size: 10px;
+  font-weight: bold;
+  color: #4d0000;
+}
+
+.traffic-light.minimize::before {
+  content: "−";
+  font-size: 10px;
+  font-weight: bold;
+  color: #995700;
+}
+
+.traffic-light.maximize::before {
+  content: "+";
+  font-size: 10px;
+  font-weight: bold;
+  color: #006400;
+}
+
+/* Dock styling */
+.dock {
+  display: flex;
+  gap: 8px;
+  padding: 8px 16px;
+  background: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(40px) saturate(180%);
+  -webkit-backdrop-filter: blur(40px) saturate(180%);
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  box-shadow: 0 5px 30px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.5);
+}
+
+.dock-dark {
+  background: rgba(30, 30, 30, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.dock-item {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  cursor: pointer;
+  position: relative;
+  transform-origin: bottom center;
+}
+
+.dock-item:hover {
+  transform: translateY(-12px) scale(1.3);
+}
+
+.dock-item:active {
+  transform: translateY(-8px) scale(1.15);
+  animation: dock-bounce 0.5s ease-in-out;
+}
+
+/* Mobile dock items - no hover effects */
+@media (max-width: 768px) {
+  .dock-item {
+    @apply w-12 h-12;
+  }
+
+  .dock-item:hover {
+    transform: none;
+  }
+
+  .dock-item:active {
+    transform: scale(0.9);
+    animation: none;
+  }
+}
+
+.dock-item.active::before {
+  content: "";
+  position: absolute;
+  bottom: -8px;
+  width: 4px;
+  height: 4px;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 50%;
+}
+
+/* Menu bar styling */
+.menu-bar {
+  height: 28px;
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(40px) saturate(180%);
+  -webkit-backdrop-filter: blur(40px) saturate(180%);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  padding: 0 16px;
+  font-size: 13px;
+  font-weight: 500;
+  color: #1d1d1f;
+}
+
+.menu-bar-dark {
+  background: rgba(30, 30, 30, 0.85);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  color: #e8e8ed;
+}
+
+.menu-item {
+  padding: 0 12px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  border-radius: 4px;
+}
+
+.menu-item:hover {
+  background: rgba(0, 0, 0, 0.05);
+}
+
+/* VS Code tab styling */
+.vscode-tab {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  background: transparent;
+  border-right: 1px solid #3e3e42;
+  cursor: pointer;
+  transition: background 0.15s ease;
+  font-size: 13px;
+  color: #cccccc;
+}
+
+.vscode-tab:hover {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.vscode-tab.active {
+  background: #1e1e1e;
+  color: #ffffff;
+}
+
+.vscode-tab-icon {
+  width: 16px;
+  height: 16px;
+}
+
+/* Terminal styling */
+.terminal {
+  background: #000000;
+  color: #00ff00;
+  font-family: "SF Mono", Monaco, Consolas, monospace;
+  padding: 16px;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.terminal-cursor {
+  display: inline-block;
+  width: 8px;
+  height: 16px;
+  background: #00ff00;
+  animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+  0%,
+  50% {
+    opacity: 1;
+  }
+  51%,
+  100% {
+    opacity: 0;
+  }
+}
+
+/* Scrollbar styling */
+.macos-scrollbar::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.macos-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.macos-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 4px;
+}
+
+.macos-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.5);
+}
+
+/* Disable text selection on UI elements */
+.no-select {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Smooth cursor */
+* {
+  cursor: default;
+}
+
+button,
+a,
+.clickable {
+  cursor: pointer;
+}
+
+/* Window resize handles */
+.resize-handle {
+  position: absolute;
+  background: transparent;
+  z-index: 10;
+}
+
+.resize-handle-n {
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 5px;
+  cursor: ns-resize;
+}
+.resize-handle-s {
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 5px;
+  cursor: ns-resize;
+}
+.resize-handle-w {
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 5px;
+  cursor: ew-resize;
+}
+.resize-handle-e {
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 5px;
+  cursor: ew-resize;
+}
+.resize-handle-nw {
+  top: 0;
+  left: 0;
+  width: 10px;
+  height: 10px;
+  cursor: nwse-resize;
+}
+.resize-handle-ne {
+  top: 0;
+  right: 0;
+  width: 10px;
+  height: 10px;
+  cursor: nesw-resize;
+}
+.resize-handle-sw {
+  bottom: 0;
+  left: 0;
+  width: 10px;
+  height: 10px;
+  cursor: nesw-resize;
+}
+.resize-handle-se {
+  bottom: 0;
+  right: 0;
+  width: 10px;
+  height: 10px;
+  cursor: nwse-resize;
+}
+
+/* ============================================
+   MOBILE RESPONSIVE STYLES
+   ============================================ */
+
+@media (max-width: 768px) {
+  /* Hide menu bar on mobile */
+  .macos-menubar {
+    display: none;
+  }
+
+  /* Fullscreen windows on mobile */
+  .window-container {
+    left: 0 !important;
+    top: 0 !important;
+    width: 100vw !important;
+    height: 100vh !important;
+  }
+
+  /* Disable window dragging/resizing on mobile */
+  .window-titlebar {
+    cursor: default !important;
+  }
+
+  .resize-handle-n,
+  .resize-handle-s,
+  .resize-handle-e,
+  .resize-handle-w,
+  .resize-handle-nw,
+  .resize-handle-ne,
+  .resize-handle-sw,
+  .resize-handle-se {
+    display: none;
+  }
+
+  /* Improve scrolling on mobile */
+  .macos-scrollbar {
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* Better touch targets */
+  .btn-primary,
+  .btn-secondary {
+    min-height: 44px;
+    padding: 12px 20px;
+  }
+
+  /* Smaller text on mobile for better fit */
+  .finder-card,
+  .contact-card,
+  .social-card {
+    padding: 16px;
+  }
+
+  /* Make tables/grids more responsive */
+  .info-item,
+  .timeline-item,
+  .cert-item {
+    padding: 12px;
+  }
+}

@@ -14,8 +14,7 @@
     "three": "^0.158.0",
     "vite-plugin-glsl": "^1.4.1",
     "vue": "^3.3.4",
-    "vue-router": "^4.3.2",
-    "vuex": "^4.1.0"
+    "vue-router": "^4.3.2"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^4.3.1",
