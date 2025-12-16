@@ -13,12 +13,13 @@
         <h1 class="text-2xl md:text-3xl font-bold text-macos-dark-text mb-2">
           Abdul-muiz Olaleye
         </h1>
-        <p class="text-lg md:text-xl text-primary mb-3">Full Stack Developer</p>
+        <p class="text-lg md:text-xl text-primary mb-3">Cloud Engineer & Full Stack Developer</p>
         <p class="text-macos-dark-text-secondary leading-relaxed">
-          I'm a passionate Full Stack Developer based in Ottawa, Canada. With a
+          I'm a passionate Cloud Engineer & Full Stack Developer based in Ontario, Canada. With a
           BSc in Economics from Babcock University and a Computer Programming
           Diploma from Algonquin College, I bring a unique blend of analytical
-          thinking and technical expertise to every project.
+          thinking and technical expertise to every project. I specialize in designing
+          scalable cloud architectures and building robust, production-ready applications.
         </p>
       </div>
     </div>
@@ -31,7 +32,7 @@
       </div>
       <div class="info-item">
         <div class="info-label">📍 Location</div>
-        <div class="info-value">Ottawa, Canada</div>
+        <div class="info-value">Ontario, Canada</div>
       </div>
       <div class="info-item">
         <div class="info-label">🎓 Education</div>
@@ -179,6 +180,13 @@ export default {
       activeTab: "experience",
       experience: [
         {
+          period: "November 2025 - Present",
+          title: "Frontend Developer & UI/UX Designer Intern",
+          company: "Ridey App – Quikbuynsell",
+          description:
+            "Designed end-to-end UI/UX workflows in Figma and implemented responsive, production-ready frontend interfaces using Next.js. Collaborated with backend engineers to integrate Python-based APIs for service discovery, booking flows, user registration, and real-time tracking. Established reusable UI components and layout patterns, managed complex user flows across multiple service categories, and maintained clear documentation in Confluence. Used GitLab for version control, merge requests, and CI/CD pipelines.",
+        },
+        {
           period: "May 2025 - Present",
           title: "Supervisor",
           company: "Farm Boy, Ottawa",
@@ -199,7 +207,7 @@ export default {
           degree: "Computer Programming Diploma",
           institution: "Algonquin College, Ottawa",
           description:
-            "Maintaining Dean's Honours List with a GPA of 3.94. Coursework includes OOP, Web Development, Database Management Systems.",
+            "Graduated with Honours (GPA: 3.87). Coursework includes OOP, Web Development, Database Management Systems.",
         },
         {
           period: "January 2020 - July 2023",
@@ -210,6 +218,11 @@ export default {
         },
       ],
       certifications: [
+        {
+          name: "AWS Solutions Architect Associate",
+          issuer: "Amazon Web Services",
+          year: "December 2025",
+        },
         {
           name: "AWS AI Practitioner",
           issuer: "Amazon Web Services",
@@ -225,7 +238,7 @@ export default {
   },
   methods: {
     downloadResume() {
-      const pdfUrl = "/Abdul-muiz-Olaleye.pdf";
+      const pdfUrl = encodeURI("/Abdul-muiz Olaleye.pdf");
       const link = document.createElement("a");
       link.href = pdfUrl;
       link.download = "Abdul-muiz-Olaleye-Resume.pdf";

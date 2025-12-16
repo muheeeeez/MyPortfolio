@@ -118,16 +118,16 @@ export default {
             '  Name: <span class="text-primary">Abdul-muiz Olaleye</span>'
           );
           this.terminalLines.push(
-            '  Role: <span class="text-primary">Full Stack Developer</span>'
+            '  Role: <span class="text-primary">Cloud Engineer & Full Stack Developer</span>'
           );
           this.terminalLines.push(
-            '  Location: <span class="text-primary">Ottawa, Canada</span>'
+            '  Location: <span class="text-primary">Ontario, Canada</span>'
           );
           this.terminalLines.push(
             '  Education: <span class="text-primary">Computer Programming (Algonquin College)</span>'
           );
           this.terminalLines.push(
-            '  GPA: <span class="text-primary">3.94</span>'
+            '  GPA: <span class="text-primary">3.87</span>'
           );
           break;
 
@@ -136,16 +136,25 @@ export default {
             '<span class="text-white font-bold">Technical Skills:</span>'
           );
           this.terminalLines.push(
-            '  Frontend: <span class="text-primary">Vue.js, React Native, TypeScript, Tailwind CSS</span>'
+            '  Languages: <span class="text-primary">AWS CDK (TypeScript & Python), HTML, CSS, JavaScript, TypeScript, Java, PHP, Python</span>'
+          );
+          this.terminalLines.push(
+            '  Frontend: <span class="text-primary">Vue.js, Nuxt.js, React Native, Tailwind CSS, Bootstrap, Ionic, Capacitor, Flutter, Three.js</span>'
           );
           this.terminalLines.push(
             '  Backend: <span class="text-primary">Python, Node.js, FastAPI, Java, PHP</span>'
           );
           this.terminalLines.push(
-            '  Database: <span class="text-primary">MySQL, MongoDB, PostgreSQL, Firebase</span>'
+            '  Cloud: <span class="text-primary">EC2, Lambda, API Gateway, S3, DynamoDB, CloudWatch, EventBridge, SSM, SNS, IAM, KMS, Textract, Bedrock, Aurora, RDS, Firebase</span>'
           );
           this.terminalLines.push(
-            '  DevOps: <span class="text-primary">Git, GitHub, AWS, Docker</span>'
+            '  Database: <span class="text-primary">PostgreSQL, MySQL, Oracle, SQL Server (SSMS), MongoDB, Firebase</span>'
+          );
+          this.terminalLines.push(
+            '  DevOps: <span class="text-primary">Git, GitHub, GitHub Actions, Render, Netlify, Linux CLI</span>'
+          );
+          this.terminalLines.push(
+            '  Tools: <span class="text-primary">VS Code, Cursor, Eclipse, Android Studio, PyCharm</span>'
           );
           break;
 
@@ -175,7 +184,7 @@ export default {
             '  1. <span class="text-primary">ClauseGuard</span> - AI-Powered Contract Analysis Platform'
           );
           this.terminalLines.push(
-            '  2. <span class="text-primary">QuizMakerAI</span> - Educational Assessment Platform'
+            '  2. <span class="text-primary">Learnly AI</span> - Educational Assessment Platform'
           );
           this.terminalLines.push(
             '  3. <span class="text-primary">HelpMeOut</span> - Screen Recording Web Application'
@@ -229,7 +238,7 @@ export default {
             '  <span class="text-primary">████████████</span>     <span class="text-white">OS:</span> <span class="text-gray-400">Portfolio v1.0</span>'
           );
           this.terminalLines.push(
-            ' <span class="text-primary">█████████████</span>     <span class="text-white">Host:</span> <span class="text-gray-400">Full Stack Developer</span>'
+            ' <span class="text-primary">█████████████</span>     <span class="text-white">Host:</span> <span class="text-gray-400">Cloud Engineer & Full Stack Developer</span>'
           );
           this.terminalLines.push(
             ' <span class="text-primary">█████████████</span>     <span class="text-white">Kernel:</span> <span class="text-gray-400">Vue.js 3.3.4</span>'
@@ -303,7 +312,7 @@ export default {
     },
 
     downloadResume() {
-      const pdfUrl = "/Abdul-muiz-Olaleye.pdf";
+      const pdfUrl = encodeURI("/Abdul-muiz Olaleye.pdf");
       const link = document.createElement("a");
       link.href = pdfUrl;
       link.download = "Abdul-muiz-Olaleye-Resume.pdf";

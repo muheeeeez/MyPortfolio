@@ -29,6 +29,7 @@
           class="bg-macos-dark-window border border-macos-dark-border rounded px-3 py-1 text-sm text-macos-dark-text"
         >
           <option value="all">All Projects</option>
+          <option value="Cloud">Cloud</option>
           <option value="Web Development">Web Development</option>
           <option value="Mobile Development">Mobile Development</option>
           <option value="Chrome Extension">Chrome Extension</option>
@@ -154,6 +155,9 @@ import dotNotation from "../../../img/DotNotation.png";
 import tullips from "../../../img/tullips.png";
 import artNFT from "../../../img/blockchain.png";
 import blogPlatform from "../../../img/blogplatform.png";
+import aiGenie from "../../../img/ai-genie-app.png";
+import cloudTodoApp from "../../../img/cloud-todo-app.png";
+import awsLogo from "../../../img/logo/aws-color.png";
 
 export default {
   name: "ProjectsWindow",
@@ -162,6 +166,34 @@ export default {
       viewMode: "grid",
       selectedCategory: "all",
       projects: [
+        {
+          title: "Learnly AI",
+          description:
+            "AI-powered educational platform with quiz creation and analytics",
+          image: quizMaker,
+          technologies: ["Nuxt.js 3", "Vue.js 3", "Pinia", "JWT", "Chart.js"],
+          category: "Web Development",
+          demoLink: "https://getlearnlyai.com/",
+          codeLink: "#",
+        },
+        {
+          title: "TodoApp: Serverless Task Management Platform",
+          description:
+            "Scalable serverless REST API with AWS CDK, Lambda, DynamoDB, Cognito authentication, and KMS encryption",
+          image: cloudTodoApp,
+          technologies: [
+            "AWS CDK",
+            "TypeScript",
+            "Lambda",
+            "API Gateway",
+            "DynamoDB",
+            "Cognito",
+            "KMS",
+          ],
+          category: "Cloud",
+          demoLink: "https://todoapp-frontend-0tbq.onrender.com/",
+          codeLink: "https://github.com/muheeeeez/TodoAPP-Using-AWS.git",
+        },
         {
           title: "ClauseGuard - AI-Powered Contract Analysis",
           description:
@@ -179,14 +211,40 @@ export default {
           codeLink: "#",
         },
         {
-          title: "QuizMakerAI",
+          title: "AI Genie: Document Intelligence Platform",
           description:
-            "AI-powered educational platform with quiz creation and analytics",
-          image: quizMaker,
-          technologies: ["Nuxt.js 3", "Vue.js 3", "Pinia", "JWT", "Chart.js"],
-          category: "Web Development",
-          demoLink: "https://quizmai.com/",
-          codeLink: "https://github.com/QuizMakerAI/QuizMakerFrontend",
+            "Serverless document processing with AWS Textract, Bedrock, Lambda, and S3 for AI-powered text extraction and summarization",
+          image: aiGenie,
+          technologies: [
+            "AWS Lambda",
+            "API Gateway",
+            "Textract",
+            "Bedrock",
+            "S3",
+            "AWS CDK",
+            "TypeScript",
+          ],
+          category: "Cloud",
+          demoLink: "https://api-pdf-genie-frontend.onrender.com/",
+          codeLink: "https://github.com/muheeeeez/ai-pdf-genie-aws-backend.git",
+        },
+        {
+          title: "AWS Incident Response & Auto-Remediation Lab",
+          description:
+            "Automated incident detection and response system using CloudWatch, EventBridge, Lambda, and SSM for self-healing infrastructure",
+          image: awsLogo,
+          technologies: [
+            "EC2",
+            "CloudWatch",
+            "EventBridge",
+            "Lambda",
+            "SSM",
+            "SNS",
+            "IAM",
+          ],
+          category: "Cloud",
+          demoLink: "#",
+          codeLink: "#",
         },
         {
           title: "HelpMeOut",

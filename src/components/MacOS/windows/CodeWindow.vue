@@ -120,6 +120,31 @@
           <div class="code-line"><span class="text-white">}</span></div>
         </div>
 
+        <!-- Cloud Skills -->
+        <div v-if="currentFile === 'cloud'">
+          <div class="code-line">
+            <span class="text-vscode-purple">const</span>
+            <span class="text-vscode-blue"> cloudServices</span>
+            <span class="text-white"> = {</span>
+          </div>
+          <div
+            v-for="(service, index) in cloudSkills"
+            :key="index"
+            class="code-line ml-4"
+          >
+            <span class="text-vscode-green">"{{ service.name }}"</span>
+            <span class="text-white">: </span>
+            <span class="text-vscode-orange">"{{ service.level }}%"</span>
+            <span class="text-white" v-if="index < cloudSkills.length - 1"
+              >,</span
+            >
+            <span class="text-macos-dark-text-secondary ml-4" v-if="service.description"
+              >// {{ service.description }}</span
+            >
+          </div>
+          <div class="code-line"><span class="text-white">};</span></div>
+        </div>
+
         <!-- DevOps -->
         <div v-if="currentFile === 'devops'">
           <div class="code-line">
@@ -206,6 +231,7 @@ export default {
         { id: "frontend", name: "frontend.js", icon: "📄" },
         { id: "backend", name: "backend.ts", icon: "📘" },
         { id: "database", name: "database.sql", icon: "🗄️" },
+        { id: "cloud", name: "cloud.yml", icon: "☁️" },
         { id: "devops", name: "devops.yml", icon: "⚙️" },
       ],
       frontendSkills: [
@@ -216,37 +242,71 @@ export default {
         },
         { name: "CSS3", level: 90, description: "Flexbox, Grid, animations" },
         { name: "JavaScript", level: 85, description: "ES6+, async/await" },
+        { name: "TypeScript", level: 75, description: "Type-safe development" },
         { name: "Vue.js", level: 80, description: "Composition & Options API" },
+        { name: "Nuxt.js", level: 75, description: "Vue.js framework" },
         {
           name: "React Native",
           level: 75,
           description: "Mobile app development",
         },
-        { name: "TypeScript", level: 75, description: "Type-safe development" },
         {
           name: "Tailwind CSS",
           level: 85,
           description: "Utility-first styling",
         },
+        { name: "Bootstrap", level: 80, description: "CSS framework" },
+        { name: "Ionic", level: 70, description: "Cross-platform mobile" },
+        { name: "Capacitor", level: 70, description: "Native runtime" },
+        { name: "Flutter", level: 70, description: "Mobile framework" },
+        { name: "Three.js", level: 65, description: "3D graphics library" },
       ],
       backendSkills: [
         { name: "Python", level: 85, description: "Django, Flask, FastAPI" },
         { name: "Node.js", level: 80, description: "Express, API development" },
         { name: "FastAPI", level: 80, description: "Modern async framework" },
+        { name: "AWS CDK", level: 75, description: "TypeScript & Python" },
         { name: "Java", level: 75, description: "Spring Boot, OOP" },
         { name: "PHP", level: 70, description: "Laravel, WordPress" },
       ],
       databaseSkills: [
         { name: "MySQL", level: 85 },
-        { name: "MongoDB", level: 80 },
         { name: "PostgreSQL", level: 75 },
+        { name: "Oracle", level: 70 },
+        { name: "SQL Server (SSMS)", level: 70 },
+        { name: "MongoDB", level: 80 },
         { name: "Firebase", level: 75 },
+      ],
+      cloudSkills: [
+        { name: "EC2", level: 80, description: "Compute instances" },
+        { name: "Lambda", level: 80, description: "Serverless functions" },
+        { name: "API Gateway", level: 75, description: "API management" },
+        { name: "S3", level: 85, description: "Object storage" },
+        { name: "DynamoDB", level: 75, description: "NoSQL database" },
+        { name: "RDS", level: 75, description: "Relational database" },
+        { name: "Aurora", level: 70, description: "Managed database" },
+        { name: "CloudWatch", level: 75, description: "Monitoring & logging" },
+        { name: "EventBridge", level: 70, description: "Event bus" },
+        { name: "Systems Manager (SSM)", level: 70, description: "Operations management" },
+        { name: "SNS", level: 70, description: "Notifications" },
+        { name: "IAM", level: 80, description: "Identity & access" },
+        { name: "KMS", level: 70, description: "Key management" },
+        { name: "Textract", level: 70, description: "Document analysis" },
+        { name: "Bedrock", level: 70, description: "AI foundation models" },
+        { name: "Google Firebase", level: 75, description: "Backend platform" },
       ],
       devOpsTools: [
         { name: "Git", level: 90 },
         { name: "GitHub", level: 85 },
-        { name: "AWS", level: 75 },
+        { name: "GitHub Actions", level: 75 },
+        { name: "Render", level: 70 },
+        { name: "Netlify", level: 75 },
+        { name: "Linux CLI", level: 80 },
         { name: "VS Code", level: 95 },
+        { name: "Cursor", level: 85 },
+        { name: "Eclipse", level: 70 },
+        { name: "Android Studio", level: 75 },
+        { name: "PyCharm", level: 75 },
       ],
     };
   },

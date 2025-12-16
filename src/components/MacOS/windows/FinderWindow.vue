@@ -53,7 +53,7 @@
           Welcome! 👋
         </h1>
         <p class="text-base md:text-lg text-macos-dark-text-secondary">
-          I'm Abdul-muiz Olaleye, a Full Stack Developer
+          I'm Abdul-muiz Olaleye, a Cloud Engineer & Full Stack Developer
         </p>
       </div>
 
@@ -112,28 +112,27 @@
         </h2>
         <div class="finder-featured-card">
           <img
-            src="../../../img/clauseguard.png"
-            alt="ClauseGuard"
+            src="../../../img/quiz.png"
+            alt="Learnly AI"
             class="w-full h-48 object-cover rounded-t-lg"
           />
           <div class="p-6">
-            <h3 class="text-xl font-bold mb-2">ClauseGuard</h3>
+            <h3 class="text-xl font-bold mb-2">Learnly AI</h3>
             <p class="text-macos-dark-text-secondary mb-4">
-              AI-Powered Contract Analysis Platform using OpenAI GPT-4, Vue.js,
-              and FastAPI
+              AI-powered educational platform with quiz creation, adaptive learning, and comprehensive analytics
             </p>
             <div class="flex gap-2">
               <span
                 class="px-3 py-1 text-xs bg-primary/20 text-primary rounded-full"
-                >Vue.js</span
+                >Nuxt.js 3</span
               >
               <span
                 class="px-3 py-1 text-xs bg-secondary/20 text-secondary rounded-full"
-                >FastAPI</span
+                >Vue.js 3</span
               >
               <span
                 class="px-3 py-1 text-xs bg-accent/20 text-accent rounded-full"
-                >OpenAI</span
+                >Pinia</span
               >
             </div>
           </div>
@@ -157,7 +156,7 @@
           </div>
         </div>
         <div class="stat-card">
-          <div class="text-3xl font-bold text-warning">2</div>
+          <div class="text-3xl font-bold text-warning">3</div>
           <div class="text-sm text-macos-dark-text-secondary">AWS Certs</div>
         </div>
       </div>
@@ -170,7 +169,7 @@ export default {
   name: "FinderWindow",
   methods: {
     downloadResume() {
-      const pdfUrl = "/Abdul-muiz-Olaleye.pdf";
+      const pdfUrl = encodeURI("/Abdul-muiz Olaleye.pdf");
       const link = document.createElement("a");
       link.href = pdfUrl;
       link.download = "Abdul-muiz-Olaleye-Resume.pdf";

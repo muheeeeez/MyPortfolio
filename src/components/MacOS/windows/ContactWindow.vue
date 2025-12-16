@@ -174,7 +174,7 @@ export default {
       window.location.href = "mailto:abdulmuiz.olatunbosun@gmail.com";
     },
     downloadResume() {
-      const pdfUrl = "/Abdul-muiz-Olaleye.pdf";
+      const pdfUrl = encodeURI("/Abdul-muiz Olaleye.pdf");
       const link = document.createElement("a");
       link.href = pdfUrl;
       link.download = "Abdul-muiz-Olaleye-Resume.pdf";
