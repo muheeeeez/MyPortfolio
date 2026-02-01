@@ -212,7 +212,6 @@ import typescriptLogo from "../img/logo/TypeScript.png";
 import nodejsLogo from "../img/logo/nodejs.png";
 import htmlLogo from "../img/logo/html-logo.png";
 import cssLogo from "../img/logo/css-logo.png";
-import clauseguard from "../img/clauseguard.png";
 
 // Import project placeholder image - using demo.jpg instead since project-placeholder.jpg doesn't exist
 
@@ -237,21 +236,6 @@ export default {
       ],
       featuredProjects: [
         {
-          title: "ClauseGuard - AI-Powered Contract Analysis Platform",
-          description:
-            "An intelligent contract analysis tool leveraging OpenAI GPT-4, Vue.js, and FastAPI to automatically detect legal risks, missing signatures, and critical deadlines in uploaded documents.",
-          image: clauseguard,
-          technologies: [
-            "Vue.js",
-            "JavaScript",
-            "OpenAI GPT-4",
-            "FastAPI",
-            "Supabase",
-          ],
-          demoLink: "https://clauseguardai.org/",
-          codeLink: "#",
-        },
-        {
           title: "HelpMeOut",
           description:
             "HelpMeOut is a web application that allows users to create and share instructional screen recordings to help friends and family navigate websites",
@@ -274,6 +258,15 @@ export default {
           technologies: ["Vue.js", "Firebase", "Axios"],
           demoLink: "https://quizmai.com/",
           codeLink: "https://github.com/QuizMakerAI/QuizMakerFrontend",
+        },
+        {
+          title: "SmartBrain",
+          description:
+            "SmartBrain is a web application that detects faces in images using AI algorithms",
+          image: smartBrains,
+          technologies: ["Vue.js", "Tailwind CSS", "Firebase", "Axios"],
+          demoLink: "https://smart-brain-dev.netlify.app/",
+          codeLink: "https://github.com/muheeeeez/Smartbrain-Frontend",
         },
       ],
     };
